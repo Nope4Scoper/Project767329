@@ -99,39 +99,141 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="Каталог.html">Каталог</a></li>
-            <li><a href="Контакты.html">Контакты</a></li>
-            <li><a href="Местоположение.html">Местоположение</a></li>
-            <li><a href="admin.html">Администрация</a></li>
+           <li><a href="index.html" class="verh1">Главная</a></li>
+            <li><a href="Каталог.html" class="verh2">Каталог</a></li>
+            <li><a href="Контакты.html" class="verh3">Контакты</a></li>
+            <li><a href="Местоположение.html" class="verh4">Местоположение</a></li>
+            <li><a href="admin.html" class="verh5">Администрация</a></li>
+			<div class="langWrap">
+				<li><a href="#" language='russian' class="active"><img src="Russ.jpg" width="50"></a></li>
+				<li><a href="#" language='english'><img src="Engg.png" width="50"></a></li>
+			</div>
         </ul>
     </nav>
 
-    <h2>Доступные путёвки</h2>
+    <h2 class="title">Доступные путёвки</h2>
     
     <div class="catalog-item">
         <a href="https://ya.ru/search/?text=Камчатка&lr=21645"><img href="Главная.html" src="Место1.png" alt="Товар 1" width="500"></a>
-			<form><p>Поездка на Камчатку</p>
-			<p>Цена: от 2 000 Руб. </p></form>
+			<form><p class="place1">Поездка на Камчатку</p>
+			<p class="price1">Цена: от 2 000 Руб. </p></form>
     </div>
 
     <div class="catalog-item">
         <a href="https://ya.ru/search/?text=Челябинск&lr=21645"><img src="Место2.png" alt="Товар 2" width="500"></a>
-        <form><p>Поездка в Челябинск</p>
-        <p>Цена: от 4 000 Руб. </p></form>
+        <form><p class="place2">Поездка в Челябинск</p>
+        <p class="price2">Цена: от 4 000 Руб. </p></form>
     </div>
 	
 	<div class="catalog-item">
         <a href="https://ya.ru/search/?text=Шанхай&lr=21645"><img src="Место3.png" alt="Товар 3" width="500"></a>
-        <form><p>Поездка в Шанхай</p>
-        <p>Цена: от 10 000 Руб. </p></form>
+        <form><p class="place3">Поездка в Шанхай</p>
+        <p class="price3">Цена: от 10 000 Руб. </p></form>
     </div>
 	
 	<div class="catalog-item">
         <a href="https://ya.ru/search/?text=Сингапур&lr=21645"><img src="Место4.png" alt="Товар 4" width="500"></a>
-        <form><p>Поездка в Сингапур</p>
-        <p>Цена: от 20 000 Руб. </p></form>
+        <form><p class="place4">Поездка в Сингапур</p>
+        <p class="price4">Цена: от 20 000 Руб. </p></form>
     </div>
+	
+	
+	<script>
+		const langEl = document.querySelector('.langWrap');
+		const link = document.querySelectorAll('a');
+		
+		const Verhu1 = document.querySelector('.verh1');
+		const Verhu2 = document.querySelector('.verh2');
+		const Verhu3 = document.querySelector('.verh3');
+		const Verhu4 = document.querySelector('.verh4');
+		const Verhu5 = document.querySelector('.verh5');
+		
+		const Title = document.querySelector('.title');
+		const Place1 = document.querySelector('.place1');
+		const Place2 = document.querySelector('.place2');
+		const Place3 = document.querySelector('.place3');
+		const Place4 = document.querySelector('.place4');
+		const Price1 = document.querySelector('.price1');
+		const Price2 = document.querySelector('.price2');
+		const Price3 = document.querySelector('.price3');
+		const Price4 = document.querySelector('.price4');
+		
 
+		link.forEach(el => {
+			el.addEventListener('click', () => {
+				langEl.querySelector('.active').classList.remove('active');
+				el.classList.add('active');
+
+				const attr = el.getAttribute('language');
+				
+				Title.textContent = data[attr].title;
+				
+				Verhu1.textContent = data[attr].verh1;
+				Verhu2.textContent = data[attr].verh2;
+				Verhu3.textContent = data[attr].verh3;
+				Verhu4.textContent = data[attr].verh4;
+				Verhu5.textContent = data[attr].verh5;
+				
+				Place1.textContent = data[attr].place1;
+				Place2.textContent = data[attr].place2;
+				Place3.textContent = data[attr].place3;
+				Place4.textContent = data[attr].place4;
+				
+				Price1.textContent = data[attr].price1;
+				Price2.textContent = data[attr].price2;
+				Price3.textContent = data[attr].price3;
+				Price4.textContent = data[attr].price4;
+				
+			});
+		});
+		
+		var data = {
+			  "russian": 
+			  {
+				"verh1":"Главная",
+				"verh2":"Каталог",
+				"verh3":"Контакты",
+				"verh4":"Местоположение",
+				"verh5":"Администрация",
+				
+				"title": "Доступные путёвки",
+			    
+			    "place1": "Поездка на Камчатку",
+				"price1": "Цена: от 2 000 Руб.",
+				
+				"place2": "Поездка в Челябинск",
+				"price2": "Цена: от 4 000 Руб.",
+				
+				"place3": "Поездка в Шанхай",
+				"price3": "Цена: от 10 000 Руб.",
+				
+				"place4": "Поездка в Сингапур",
+				"price4": "Цена: от 20 000 Руб.",
+			  },
+			  "english": 
+			  {
+				"verh1":"Main",
+				"verh2":"Catalog",
+				"verh3":"Contacts",
+				"verh4":"Location",
+				"verh5":"Administration",
+				
+				"title": "Available tours",
+			    
+			    "place1": "Trip to Kamchatka",
+				"price1": "Price: from 2 000 RUB.",
+				
+				"place2": "Trip to Chelyabinsk",
+				"price2": "Price: from 4 000 RUB.",
+				
+				"place3": "Trip to Shanghai",
+				"price3": "Price: from 10 000 RUB.",
+				
+				"place4": "Trip to Singapore",
+				"price4": "Price: from 20 000 RUB.",
+			  },
+			}
+	</script>
+	
 </body>
 </html>
