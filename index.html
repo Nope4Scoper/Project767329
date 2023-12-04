@@ -200,6 +200,11 @@
 	<h3>
 	<marquee behavior="scroll" direction="left" class="lozung">Оформляйте билеты куда угодно только у нас!!</marquee>
 	</h3>
+
+	<form>
+	 <h2 class="title_statia">Отдых на Камчатке: незабываемые приключения на дальнем востоке</h2>
+	 <ul class="statia_1">Камчатка, одно из самых удивительных мест в России, притягивает своей дикой и неприрученной природой, активными вулканами и небывалой красотой ландшафтов. Место, где сливаются кипящий океан, горные вершины и таежные леса. Отдых на Камчатке - это настоящее путешествие в мир, где природа остается главным героем. Одной из главных достопримечательностей Камчатки считаются вулканы. Здесь расположено около 30 активных вулканов, среди которых самыми знаменитыми являются Ключевская Сопка, Мутновский, Горелый и Корякский. Посмотреть на вулканы можно с вертолета или совершить восхождение на них. Это незабываемая возможность увидеть настоящий огненный шоу природы и ощутить его силу. Помимо вулканов, на Камчатке можно найти и богатую фауну. Местные реки обитают сотни видов рыб, включая лосося, форель и гольца райнери. Здесь еще можно увидеть птиц разных видов, включая морских орлов и птицу-кликунов. А на побережье много разных видов морских животных, в том числе морских львов и тюленей, которые можно увидеть на организованных экскурсиях.</ul>
+	</form>
 	
 	<a href="Земля.png"><img src="Самолет.png" alt="Полетели" width="200"></a>
 	</div>
@@ -218,6 +223,8 @@
 		const descr2 = document.querySelector('.description_2');
 		const descr3 = document.querySelector('.description_3');
 		const dlozung = document.querySelector('.lozung');
+		const Title_Statia = document.querySelector('.title_statia');
+		const Statia1 = document.querySelector('.statia_1');
 
 		link.forEach(el => {
 			el.addEventListener('click', () => {
@@ -238,6 +245,9 @@
 				descr2.textContent = data[attr].description_2;
 				descr3.textContent = data[attr].description_3;
 				dlozung.textContent = data[attr].lozung;
+				
+				Title_Statia.textContent = data[attr].title_statia;
+				Statia1.textContent = data[attr].statia_1;
 			});
 		});
 		
@@ -256,6 +266,9 @@
 				"description_2": "Широкий выбор куда поехать",
 				"description_3": "Оформление билетов меньше чем за 5 минут",
 				"lozung": "Оформляйте билеты куда угодно только у нас!!",
+			  
+				"title_statia": "Отдых на Камчатке: незабываемые приключения на дальнем востоке",
+				"statia_1": "Камчатка, одно из самых удивительных мест в России, притягивает своей дикой и неприрученной природой, активными вулканами и небывалой красотой ландшафтов. Место, где сливаются кипящий океан, горные вершины и таежные леса. Отдых на Камчатке - это настоящее путешествие в мир, где природа остается главным героем. Одной из главных достопримечательностей Камчатки считаются вулканы. Здесь расположено около 30 активных вулканов, среди которых самыми знаменитыми являются Ключевская Сопка, Мутновский, Горелый и Корякский. Посмотреть на вулканы можно с вертолета или совершить восхождение на них. Это незабываемая возможность увидеть настоящий огненный шоу природы и ощутить его силу. Помимо вулканов, на Камчатке можно найти и богатую фауну. Местные реки обитают сотни видов рыб, включая лосося, форель и гольца райнери. Здесь еще можно увидеть птиц разных видов, включая морских орлов и птицу-кликунов. А на побережье много разных видов морских животных, в том числе морских львов и тюленей, которые можно увидеть на организованных экскурсиях.",
 			  },
 			  "english": 
 			  {
@@ -271,6 +284,9 @@
 				"description_2": "Wide choice of where to go",
 				"description_3": "Ticketing in less than 5 minutes",
 				"lozung": "Book your tickets anywhere only with us!!",
+				  
+			  	"title_statia": "Rest on Kamchatka: unforgettable adventures in the Far East",
+				"statia_1": "Kamchatka, one of the most amazing places in Russia, attracts with its wild and untamed nature, active volcanoes, and unprecedented beauty of landscapes. It's a place where the boiling ocean, mountain peaks, and taiga forests merge. Resting on Kamchatka is a true journey into a world where nature remains the main protagonist. One of the main attractions of Kamchatka are its volcanoes. There are about 30 active volcanoes here, among which the most famous are Klyuchevskaya Sopka, Mutnovsky, Gorely, and Koryaksky. You can admire the volcanoes from a helicopter or climb them. It's an unforgettable opportunity to witness a real fire show of nature and feel its power. In addition to volcanoes, Kamchatka is also home to a rich fauna. Local rivers are inhabited by hundreds of fish species, including salmon, trout, and rainbow smelt. You can also see different species of birds here, including sea eagles and puffins. And on the coast, there are many different marine animals, including sea lions and seals, which can be observed on organized excursions.",
 			  },
 			}
 	</script>
